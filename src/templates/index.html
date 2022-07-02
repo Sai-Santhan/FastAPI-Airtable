@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Hello from FastAPI + Airtable</h1>
-{% endblock content %}
+<div class='col-md-6 mx-auto text-center py-5'>
+    <div class='py-5 my-5'>
+        <h1>Hello, fastapi - airtable!</h1>
+
+        {% if submitted_email and successful_send %}
+        <p>Thank you for joining with {{ submitted_email }}</p>
+        {% endif %}
+
+        <form method='POST'>
+            <input class='form-control' type='email' name='email' placeholder='Your email...' required='required' />
+            <input class='btn btn-primary mt-3' type='submit' value='Join waitlist' />
+        </form>
+    </div>
+</div>
+{% endblock %}
